@@ -3,8 +3,8 @@
 
 # Türk Anime TV Watch Together
 
-  <a href="https://www.codefactor.io/repository/github/constani/watchtogether"><img alt="CodeFactor Grade" src="https://www.codefactor.io/repository/github/constani/watchtogether/badge"></a>
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Constani/watchTogether">
+  <a href="https://www.codefactor.io/repository/github/constani/TurkAnimeTV-WatchTogether"><img alt="CodeFactor Grade" src="https://www.codefactor.io/repository/github/constani/TurkAnimeTV-WatchTogether/badge"></a>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Constani/TurkAnimeTV-WatchTogether">
 
 **Arkadaşlarınızla interaktif bir şekilde Türk Anime TV üzerinden anime izlemenizi sağlayan bir Chrome eklentisi**
 
