@@ -1,0 +1,33 @@
+{
+  "name": "browser-extension-svelte",
+  "version": "1.0.0",
+  "description": "A browser extension made with Svelte.",
+  "homepage": "",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TurkOtaku/watchTogether.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "webextension-polyfill": "^0.7.0"
+  },
+  "dependencies": {
+    "glob-parent": "^5.1.2",
+    "path-parse": "^1.0.7",
+    "sirv-cli": "^1.0.0",
+    "socket.io-client": "^4.4.1",
+    "ws": "^6.2.2"
+  }
+}
