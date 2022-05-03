@@ -10,22 +10,109 @@ console.clear = () => {} //prevent website from clearing the console
 
 let get = document.querySelector("#arkaplan > div:nth-child(3) > div.col-xs-4 > div > div:nth-child(2) > div")
 
-get.innerHTML="",get.style="",get.style.display="flex",get.style.flexDirection="column",get.style.backgroundColor="rgba(12, 11, 11, 0.871)",get.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",get.style.borderBottomStyle="solid",get.style.borderBottomWidth="1px",get.style.borderBottomColor="#1c1a1a",get.style.borderRadius="4px",get.style.alignItems="center",get.style.height="60rem",get.style.justifyContent="center";let input=document.createElement("input");input.style.paddingTop="1rem",input.style.paddingBottom="1rem",input.style.paddingRight="10px",input.placeholder="Oda ID'si",input.style.fontSize="1.5rem",input.style.outline="none",input.style.border="solid 1px rgb(70,70,70)",input.style.height="4rem",input.style.marginTop="1rem",input.style.paddingLeft="10px",input.style.width="80%",input.style.borderRadius="4px",input.id="roomID";let input2=document.createElement("input");input2.style.paddingTop="1rem",input2.style.paddingBottom="1rem",input2.style.paddingRight="10px",input2.placeholder="Kullanıcı Adı",input2.style.fontSize="1.5rem",input2.style.outline="none",input2.style.border="solid 1px rgb(70,70,70)",input2.style.height="4rem",input2.style.marginTop="1rem",input2.style.paddingLeft="10px",input2.style.width="80%",input2.style.borderRadius="4px",input2.id="username";let button=document.createElement("button");button.style.borderRadius="6px",button.style.height="5.5rem",button.style.width="50%",button.style.backgroundColor="transparent",button.style.border="solid 1px rgb(70,70,70)",button.style.marginTop="1rem",button.innerHTML="Bağlan",button.style.fontSize="1.5rem",button.style.fontWeight="550",button.style.transition="all 250ms",button.style.marginBottom="1rem",button.style.color="rgb(231, 224, 224)",button.id="connectSocket";
+get.innerHTML = ""
+get.style = ""
+get.setAttribute("class", "chatBar")
+get.style.display = "flex"
+get.style.flexDirection = "column"
+get.style.backgroundColor = "rgba(32, 28, 28, 1)"
+get.style.height = "50rem"
 
-button.addEventListener("mouseover", () => {
-  button.style.backgroundColor = "rgb(70,70,70)"
-})
+let title = document.createElement("p")
+title.innerHTML = "TürkAnimeTV Watch Together"
+title.style.fontFamily = "Segoe UI"
+title.style.fontSize = "2rem"
+title.style.fontWeight = "400"
+title.style.color = "#C8C4C4"
+title.style.margin = "0 auto"
+title.style.paddingTop = "3rem"
+
+let divider = document.createElement("img")
+divider.src = browser.runtime.getURL("assets/divider1.svg")
+divider.style.paddingTop = "1rem"
+
+let inputs = document.createElement("div")
+inputs.style.width = "100%"
+inputs.style.overflow = "auto"
+inputs.style.marginTop = "5rem"
+inputs.style.display = "flex"
+inputs.style.flexDirection = "column"
+inputs.style.gap = "2.5rem"
 
 
-button.addEventListener("mouseout", () => {
-  button.style.backgroundColor = "transparent"
-})
+
+let idinput = document.createElement("input")
+idinput.id = "roomID"
+idinput.placeholder = "Oda ID"
+idinput.style.setProperty("color", "#C8C4C4", "important")
+idinput.style.fontFamily = "Segoe UI"
+idinput.style.fontSize = "1.3rem"
+idinput.style.border = "1px solid #333030"
+idinput.style.outline="none"
+idinput.style.background = "linear-gradient(269.55deg, #302C2C 37.46%, rgba(48, 44, 44, 0) 152.75%)"
+idinput.style.borderRadius = "4px"
+idinput.style.margin = "0 auto"
+idinput.style.display="block"
+idinput.style.height = "3.5rem"
+idinput.style.paddingLeft="1rem"
+idinput.style.width = "75%"
+idinput.style.paddingRight ="1rem"
+
+let usernameinput = document.createElement("input")
+usernameinput.id = "username"
+usernameinput.placeholder = "Kullanıcı Adı"
+usernameinput.style.setProperty("color", "#C8C4C4", "important")
+usernameinput.style.fontFamily = "Segoe UI"
+usernameinput.style.fontSize = "1.3rem"
+usernameinput.style.border = "1px solid #333030"
+usernameinput.style.outline="none"
+usernameinput.style.background = "linear-gradient(269.55deg, #302C2C 37.46%, rgba(48, 44, 44, 0) 152.75%)"
+usernameinput.style.borderRadius = "4px"
+usernameinput.style.margin = "0 auto"
+usernameinput.style.display="block"
+usernameinput.style.height = "3.5rem"
+usernameinput.style.paddingLeft="1rem"
+usernameinput.style.width = "75%"
+usernameinput.style.paddingRight ="1rem"
+
+let button = document.createElement("button")
+button.id = "connectSocket"
+button.style.height = "5rem"
+button.style.fontFamily = "Segoe UI"
+button.innerHTML = "Bağlan"
+button.style.color = "white"
+button.style.fontSize = "1.7rem"
+button.style.border = "1px solid #333030"
+button.style.background = "linear-gradient(269.55deg, #302C2C 37.46%, rgba(48, 44, 44, 0) 152.75%)"
+button.style.borderRadius = "4px"
+button.style.fontWeight = "400"
+button.style.display = "block"
+button.style.margin = "0 auto"
+button.style.width = "75%"
+
+
+
+get.appendChild(title)
+get.appendChild(divider)
+inputs.appendChild(idinput)
+inputs.appendChild(usernameinput)
+inputs.appendChild(button)
+get.appendChild(inputs)
+
+
+
+
+//get.innerHTML="",get.style="",get.style.display="flex",get.style.flexDirection="column",get.style.backgroundColor="rgba(12, 11, 11, 0.871)",get.style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",get.style.borderBottomStyle="solid",get.style.borderBottomWidth="1px",get.style.borderBottomColor="#1c1a1a",get.style.borderRadius="4px",get.style.alignItems="center",get.style.height="60rem",get.style.justifyContent="center";let input=document.createElement("input");input.style.paddingTop="1rem",input.style.paddingBottom="1rem",input.style.paddingRight="10px",input.placeholder="Oda ID'si",input.style.fontSize="1.5rem",input.style.outline="none",input.style.border="solid 1px rgb(70,70,70)",input.style.height="4rem",input.style.marginTop="1rem",input.style.paddingLeft="10px",input.style.width="80%",input.style.borderRadius="4px",input.id="roomID";let input2=document.createElement("input");input2.style.paddingTop="1rem",input2.style.paddingBottom="1rem",input2.style.paddingRight="10px",input2.placeholder="Kullanıcı Adı",input2.style.fontSize="1.5rem",input2.style.outline="none",input2.style.border="solid 1px rgb(70,70,70)",input2.style.height="4rem",input2.style.marginTop="1rem",input2.style.paddingLeft="10px",input2.style.width="80%",input2.style.borderRadius="4px",input2.id="username";let button=document.createElement("button");button.style.borderRadius="6px",button.style.height="5.5rem",button.style.width="50%",button.style.backgroundColor="transparent",button.style.border="solid 1px rgb(70,70,70)",button.style.marginTop="1rem",button.innerHTML="Bağlan",button.style.fontSize="1.5rem",button.style.fontWeight="550",button.style.transition="all 250ms",button.style.marginBottom="1rem",button.style.color="rgb(231, 224, 224)",button.id="connectSocket";
+/*
+
 
 get.appendChild(input)
 get.appendChild(input2)
-get.appendChild(button)
+get.appendChild(button)*/
 document.querySelector("#arkaplan > div:nth-child(3) > div.col-xs-4 > div > div:nth-child(5)").remove() //clear unnecessary divs to make more space
 document.querySelector("#arkaplan > div:nth-child(3) > div.col-xs-4 > div > div:nth-child(5)").remove()
+
+
 
 document.querySelector("#connectSocket").addEventListener("click", () => {
   const socket = io("http://127.0.0.1:3000");

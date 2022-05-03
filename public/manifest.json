@@ -20,5 +20,9 @@
    ],
    "externally_connectable": {
     "matches": ["https://www.turkanime.co/video/*"]
-    }
+    },
+    "web_accessible_resources": [{
+      "resources": ["assets/divider1.svg"],
+      "matches": ["<all_urls>"]
+    }]
 }
